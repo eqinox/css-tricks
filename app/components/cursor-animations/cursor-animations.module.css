@@ -4,6 +4,7 @@
   gap: 1.5rem;
   padding: 2rem;
   max-width: 800px;
+  grid-auto-rows: min-content;
 }
 
 .cursor-box {

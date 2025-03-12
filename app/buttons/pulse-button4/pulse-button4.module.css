@@ -1,0 +1,99 @@
+.button {
+  padding: 0.75em 1.5em;
+  border-radius: 1em;
+  font-size: 30px;
+  position: relative;
+  /* border: 1px solid black; */
+  /* background-color: rgb(163, 73, 164); */
+  /* filter: none; */
+  /* mix-blend-mode: multiply; */
+}
+.button:before,
+.button:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  outline: inherit;
+  border-radius: inherit;
+}
+.button:hover,
+.button:hover:before,
+.button:hover:after {
+  outline: 2px solid #fff0;
+  animation: pulse 3.3s infinite linear;
+}
+.button:hover:before {
+  animation-delay: 1.1s;
+}
+.button:hover:after {
+  animation-delay: 2.2s;
+}
+
+@keyframes pulse {
+  0%,
+  10% {
+    outline-offset: 0px;
+    outline-color: #ff00fb;
+    outline-width: 3px;
+  }
+
+  50% {
+    outline-offset: 20px;
+    outline-color: #ff7cfd;
+    outline-width: 2px;
+  }
+
+  90%,
+  100% {
+    outline-offset: 40px;
+    outline-color: #ffa4fe;
+    outline-width: 1px;
+  }
+}
+
+.inner {
+  background-color: pink;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-radius: inherit;
+  mix-blend-mode: multiply;
+  will-change: filter, outline-offset, background-color;
+  transition-behavior: allow-discrete;
+}
+
+.inner:before,
+.inner:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  outline: inherit;
+  border-radius: inherit;
+}
+.inner:hover,
+.inner:hover:before,
+.inner:hover:after {
+  outline: 2px solid #fff0;
+  animation: none;
+  animation: pulseInner 1.1s infinite linear;
+}
+.inner:hover:before {
+  animation-delay: 1.1s;
+}
+.inner:hover:after {
+  animation-delay: 2.2s;
+}
+
+@keyframes pulseInner {
+  0%,
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
